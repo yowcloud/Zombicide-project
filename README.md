@@ -16,5 +16,5 @@ El proyecto se compone de varias clases clave diseñadas para representar los di
 - gusgonza
 - luis
 
-[![Estado de construcción](https://img.shields.io/static/v1?label=Estado%20de%20Construcción&message=En%20Proceso&color=yellow)](https://gitlab.com/gusgonza/proyecto-herencia-EmpresaAlimentacion)
+[![Estado de construcción](https://img.shields.io/static/v1?label=Estado%20de%20Construcción&message=En%20Proceso&color=yellow)](https://github.com/yowcloud/Zombicide-project)
 
