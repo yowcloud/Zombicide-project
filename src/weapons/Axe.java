@@ -1,49 +1,52 @@
 package weapons;
 
 import java.util.ArrayList;
+
 import zombie.Zombie;
 
 /**
- * Axe class extends the Weapon class.
- * It represents a weapon of type Axe with specific properties and methods.
+ * La clase Axe extiende la clase Weapon.
+ * Representa un arma de tipo Hacha con propiedades y métodos específicos.
  */
 public class Axe extends Weapon {
 
- /**
-  * Axe constructor.
-  * @param name Name of the weapon.
-  * @param damage Damage caused by the weapon.
-  * @param range Range of the weapon.
-  * @param accuracy Accuracy of the weapon.
-  * @param specialAbilityUses Number of uses of the special ability.
-  */
- public Axe(String name, int damage, int range, int accuracy, int specialAbilityUses) {
-  super(name, damage, range, accuracy, specialAbilityUses);
- }
+    /**
+     * Constructor de Axe.
+     *
+     * @param name               Nombre del arma.
+     * @param damage             Daño causado por el arma.
+     * @param range              Alcance del arma.
+     * @param accuracy           Precisión del arma.
+     * @param specialAbilityUses Número de usos de la habilidad especial.
+     */
+    public Axe(String name, int damage, int range, int accuracy, int specialAbilityUses) {
+        super(name, damage, range, accuracy, specialAbilityUses);
+    }
 
- /**
-  * Prints the special ability of the Axe.
-  */
- private void specialAbility() {
-  System.out.println("Free kill 1 Boomer.");
- }
+    /**
+     * Imprime la habilidad especial del Hacha.
+     */
+    private void specialAbility() {
+        System.out.println("Mata 1 Boomer gratis.");
+    }
 
- /**
-  * Performs a special attack that deletes zombies of type Boomer.
-  * @param zombies ArrayList of zombies.
-  * @return ArrayList of zombies after the special attack.
-  */
- public ArrayList<Zombie> specialAttack(ArrayList<Zombie> zombies) {
-  int count = 0;
+    /**
+     * Realiza un ataque especial que elimina zombies de tipo Boomer.
+     *
+     * @param zombies ArrayList de zombies.
+     * @return ArrayList de zombies después del ataque especial.
+     */
+    public ArrayList<Zombie> specialAttack(ArrayList<Zombie> zombies) {
+        int count = 0;
 
-  for (int pos = 0; pos < zombies.size() && count <= 1; pos++) {
-   if (zombies.get(pos).getTypeZombie() == 'b') {
-    zombies.remove(pos);
-    count++;
-   }
-  }
-  specialAbility();
+        for (int pos = 0; pos < zombies.size() && count <= 1; pos++) {
+            if (zombies.get(pos).getTypeZombie() == 'b') {
+                zombies.remove(pos);
+                count++;
+            }
+        }
+        specialAbility();
 
-  return zombies;
- }
+        return zombies;
+    }
 }

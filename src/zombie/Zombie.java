@@ -2,53 +2,98 @@ package zombie;
 
 import humanoide.Humanoide;
 
+/**
+ * La clase Zombie extiende la clase Humanoide.
+ * Representa un zombie con propiedades y métodos específicos.
+ */
 public class Zombie extends Humanoide {
 
-	protected int movementZombie;
-	protected int damageZombie;
-	protected char typeZombie;
+    protected int movementZombie;
+    protected int damageZombie;
+    protected char typeZombie;
 
-	public Zombie(String name, int health, int maxHealth, boolean alive, int movementZombie, int damageZombie,
-			char typeZombie) {
-		super(name, health, maxHealth, alive);
-		setMovementZombie(movementZombie);
-		setDamageZombie(damageZombie);
-		setTypeZombie(typeZombie);
-	}
+    /**
+     * Constructor de Zombie.
+     *
+     * @param name           Nombre del zombie.
+     * @param health         Salud del zombie.
+     * @param maxHealth      Salud máxima del zombie.
+     * @param alive          Indica si el zombie está vivo.
+     * @param movementZombie Movimiento del zombie.
+     * @param damageZombie   Daño causado por el zombie.
+     * @param typeZombie     Tipo de zombie.
+     */
+    public Zombie(String name, int health, int maxHealth, boolean alive, int movementZombie, int damageZombie,
+                  char typeZombie) {
+        super(name, health, maxHealth, alive);
+        setMovementZombie(movementZombie);
+        setDamageZombie(damageZombie);
+        setTypeZombie(typeZombie);
+    }
 
-	// test
-	public void zombieSound() {
-		System.out.println("The zombie says: aaaa aaaa");
-	}
-	
+    // Getter y setters
 
-	// Getter y setters
-	public int getMovementZombie() {
-		return movementZombie;
-	}
+    /**
+     * Obtiene el movimiento del zombie.
+     *
+     * @return Movimiento del zombie.
+     */
+    public int getMovementZombie() {
+        return movementZombie;
+    }
 
-	public void setMovementZombie(int movementZombie) {
-		this.movementZombie = movementZombie;
-	}
+    /**
+     * Establece el movimiento del zombie.
+     *
+     * @param movementZombie Movimiento del zombie.
+     */
+    public void setMovementZombie(int movementZombie) {
+        this.movementZombie = movementZombie;
+    }
 
-	public int getDamageZombie() {
-		return damageZombie;
-	}
+    /**
+     * Obtiene el daño del zombie.
+     *
+     * @return Daño del zombie.
+     */
+    public int getDamageZombie() {
+        return damageZombie;
+    }
 
-	public void setDamageZombie(int damageZombie) {
-		this.damageZombie = damageZombie;
-	}
+    /**
+     * Establece el daño del zombie.
+     *
+     * @param damageZombie Daño del zombie.
+     */
+    public void setDamageZombie(int damageZombie) {
+        this.damageZombie = damageZombie;
+    }
 
-	public char getTypeZombie() {
-		return typeZombie;
-	}
+    /**
+     * Obtiene el tipo de zombie.
+     *
+     * @return Tipo de zombie.
+     */
+    public char getTypeZombie() {
+        return typeZombie;
+    }
 
-	public void setTypeZombie(char typeZombie) {
-		this.typeZombie = typeZombie;
-	}
+    /**
+     * Establece el tipo de zombie.
+     *
+     * @param typeZombie Tipo de zombie.
+     */
+    public void setTypeZombie(char typeZombie) {
+        this.typeZombie = typeZombie;
+    }
 
-	public String toString() {
-		return name + " movement = " + movementZombie + ", damage = " + damageZombie + " health= " + health;
-	}
+    /**
+     * Devuelve una representación en cadena del objeto Zombie.
+     *
+     * @return Representación en cadena del Zombie.
+     */
+    public String toString() {
+        return name + " movement = " + movementZombie + ", damage = " + damageZombie + " health= " + health;
+    }
 
 }

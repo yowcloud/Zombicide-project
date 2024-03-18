@@ -2,59 +2,63 @@ package weapons;
 
 import java.util.ArrayList;
 import java.util.Random;
+
 import zombie.Zombie;
 
 /**
- * Sword class extends the Weapon class.
- * It represents a weapon of type Sword with specific properties and methods.
+ * La clase Sword extiende la clase Weapon.
+ * Representa un arma de tipo Espada con propiedades y métodos específicos.
  */
 public class Sword extends Weapon {
 
- /**
-  * Sword constructor.
-  * @param name Name of the weapon.
-  * @param damage Damage caused by the weapon.
-  * @param range Range of the weapon.
-  * @param accuracy Accuracy of the weapon.
-  * @param specialAbilityUses Number of uses of the special ability.
-  */
- public Sword(String name, int damage, int range, int accuracy, int specialAbilityUses) {
-  super(name, damage, range, accuracy, specialAbilityUses);
- }
+    /**
+     * Constructor de Sword.
+     *
+     * @param name               Nombre del arma.
+     * @param damage             Daño causado por el arma.
+     * @param range              Alcance del arma.
+     * @param accuracy           Precisión del arma.
+     * @param specialAbilityUses Número de usos de la habilidad especial.
+     */
+    public Sword(String name, int damage, int range, int accuracy, int specialAbilityUses) {
+        super(name, damage, range, accuracy, specialAbilityUses);
+    }
 
- /**
-  * Prints the special ability of the Sword.
-  */
- private void specialAbility() {
-  System.out.println("Kill 2 random zombies for free.");
- }
+    /**
+     * Imprime la habilidad especial de la Espada.
+     */
+    private void specialAbility() {
+        System.out.println("Mata 2 zombies aleatorios gratis.");
+    }
 
- /**
-  * Performs a special attack that deletes two random zombies.
-  * @param zombies ArrayList of zombies.
-  * @return ArrayList of zombies after the special attack.
-  */
- public ArrayList<Zombie> specialAttack(ArrayList<Zombie> zombies) {
+    /**
+     * Realiza un ataque especial que elimina dos zombies aleatorios.
+     *
+     * @param zombies ArrayList de zombies.
+     * @return ArrayList de zombies después del ataque especial.
+     */
+    public ArrayList<Zombie> specialAttack(ArrayList<Zombie> zombies) {
 
-  int count = 0;
+        int count = 0;
 
-  while (count < 2 && !zombies.isEmpty()) {
-   int randomIndex = randomZombieDelete(zombies);
-   zombies.remove(randomIndex);
-   count++;
-  }
-  specialAbility();
+        while (count < 2 && !zombies.isEmpty()) {
+            int randomIndex = randomZombieDelete(zombies);
+            zombies.remove(randomIndex);
+            count++;
+        }
+        specialAbility();
 
-  return zombies;
- }
+        return zombies;
+    }
 
- /**
-  * Generates a random index within the range of the zombies ArrayList.
-  * @param zombies ArrayList of zombies.
-  * @return Random index.
-  */
- private int randomZombieDelete(ArrayList<Zombie> zombies) {
-  Random random = new Random();
-  return random.nextInt(zombies.size());
- }
+    /**
+     * Genera un índice aleatorio dentro del rango del ArrayList de zombies.
+     *
+     * @param zombies ArrayList de zombies.
+     * @return Índice aleatorio.
+     */
+    private int randomZombieDelete(ArrayList<Zombie> zombies) {
+        Random random = new Random();
+        return random.nextInt(zombies.size());
+    }
 }

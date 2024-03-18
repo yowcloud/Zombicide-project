@@ -5,50 +5,52 @@ import java.util.ArrayList;
 import zombie.Zombie;
 
 /**
- * Arch class extends the Weapon class.
- * It represents a weapon of type Arch with specific properties and methods.
+ * La clase Arch extiende la clase Weapon.
+ * Representa un arma de tipo Arco con propiedades y métodos específicos.
  */
 public class Arch extends Weapon {
 
-	/**
-	 * Arch constructor.
-	 * @param name Name of the weapon.
-	 * @param damage Damage caused by the weapon.
-	 * @param range Range of the weapon.
-	 * @param accuracy Accuracy of the weapon.
-	 * @param specialAbilityUses Number of uses of the special ability.
-	 */
-	public Arch(String name, int damage, int range, int accuracy, int specialAbilityUses) {
-		super(name, damage, range, accuracy, specialAbilityUses);
-		setName(name);
-		setDamage(damage);
-		setRange(range);
-		setAccuracy(accuracy);
-	}
+    /**
+     * Constructor de Arch.
+     *
+     * @param name               Nombre del arma.
+     * @param damage             Daño causado por el arma.
+     * @param range              Alcance del arma.
+     * @param accuracy           Precisión del arma.
+     * @param specialAbilityUses Número de usos de la habilidad especial.
+     */
+    public Arch(String name, int damage, int range, int accuracy, int specialAbilityUses) {
+        super(name, damage, range, accuracy, specialAbilityUses);
+        setName(name);
+        setDamage(damage);
+        setRange(range);
+        setAccuracy(accuracy);
+    }
 
-	/**
-	 * Prints the special ability of the Arch.
-	 */
-	private void specialAbility() {
-		System.out.println("Kill 1 runner for free.");
-	}
+    /**
+     * Imprime la habilidad especial del Arco.
+     */
+    private void specialAbility() {
+        System.out.println("Mata 1 corredor gratis.");
+    }
 
-	/**
-	 * Performs a special attack that deletes zombies of type Runner.
-	 * @param zombies ArrayList of zombies.
-	 * @return ArrayList of zombies after the special attack.
-	 */
-	public ArrayList<Zombie> specialAttack(ArrayList<Zombie> zombies) {
-		int count = 0;
+    /**
+     * Realiza un ataque especial que elimina zombies de tipo Corredor.
+     *
+     * @param zombies ArrayList de zombies.
+     * @return ArrayList de zombies después del ataque especial.
+     */
+    public ArrayList<Zombie> specialAttack(ArrayList<Zombie> zombies) {
+        int count = 0;
 
-		for (int pos = 0; pos < zombies.size() && count < 1; pos++) {
-			if (zombies.get(pos).getTypeZombie() == 'r') {
-				zombies.remove(pos);
-				count++;
-			}
-		}
-		specialAbility();
+        for (int pos = 0; pos < zombies.size() && count < 1; pos++) {
+            if (zombies.get(pos).getTypeZombie() == 'r') {
+                zombies.remove(pos);
+                count++;
+            }
+        }
+        specialAbility();
 
-		return zombies;
-	}
+        return zombies;
+    }
 }

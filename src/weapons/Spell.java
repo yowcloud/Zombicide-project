@@ -1,48 +1,51 @@
 package weapons;
 
 import java.util.ArrayList;
+
 import zombie.Zombie;
 
 /**
- * Spell class extends the Weapon class.
- * It represents a weapon of type Spell with specific properties and methods.
+ * La clase Spell extiende la clase Weapon.
+ * Representa un arma de tipo Hechizo con propiedades y métodos específicos.
  */
 public class Spell extends Weapon {
 
- /**
-  * Spell constructor.
-  * @param name Name of the weapon.
-  * @param damage Damage caused by the weapon.
-  * @param range Range of the weapon.
-  * @param accuracy Accuracy of the weapon.
-  * @param specialAbilityUses Number of uses of the special ability.
-  */
- public Spell(String name, int damage, int range, int accuracy, int specialAbilityUses) {
-  super(name, damage, range, accuracy, specialAbilityUses);
- }
+    /**
+     * Constructor de Spell.
+     *
+     * @param name               Nombre del arma.
+     * @param damage             Daño causado por el arma.
+     * @param range              Alcance del arma.
+     * @param accuracy           Precisión del arma.
+     * @param specialAbilityUses Número de usos de la habilidad especial.
+     */
+    public Spell(String name, int damage, int range, int accuracy, int specialAbilityUses) {
+        super(name, damage, range, accuracy, specialAbilityUses);
+    }
 
- /**
-  * Prints the special ability of the Spell.
-  */
- public void specialAbility() {
-  System.out.println("Kill 2 walkers for free.");
- }
+    /**
+     * Imprime la habilidad especial del Hechizo.
+     */
+    public void specialAbility() {
+        System.out.println("Mata 2 caminantes gratis.");
+    }
 
- /**
-  * Performs a special attack that deletes zombies of type Walker.
-  * @param zombies ArrayList of zombies.
-  * @return ArrayList of zombies after the special attack.
-  */
- public ArrayList<Zombie> specialAttack(ArrayList<Zombie> zombies) {
-  int count = 0;
+    /**
+     * Realiza un ataque especial que elimina zombies de tipo Caminante.
+     *
+     * @param zombies ArrayList de zombies.
+     * @return ArrayList de zombies después del ataque especial.
+     */
+    public ArrayList<Zombie> specialAttack(ArrayList<Zombie> zombies) {
+        int count = 0;
 
-  for (int pos = 0; pos < zombies.size() && count <= 1; pos++) {
-   if (zombies.get(pos).getTypeZombie() == 'w') {
-    zombies.remove(pos);
-    count++;
-   }
-  }
+        for (int pos = 0; pos < zombies.size() && count <= 1; pos++) {
+            if (zombies.get(pos).getTypeZombie() == 'w') {
+                zombies.remove(pos);
+                count++;
+            }
+        }
 
-  return zombies;
- }
+        return zombies;
+    }
 }
